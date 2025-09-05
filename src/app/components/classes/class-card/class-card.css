@@ -1,0 +1,19 @@
+.card {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 8px;
+  max-width: 600px;
+  background: #f9f9f9;
+}
+
+h2, h3, h4 {
+  margin-bottom: 0.5rem;
+}
+
+ul {
+  padding-left: 1.2rem;
+}
+
+section {
+  margin-bottom: 1rem;
+}

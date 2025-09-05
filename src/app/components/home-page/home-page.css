@@ -1,0 +1,7 @@
+.character-class-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20svw, 1fr));
+    gap: 5svw;
+    padding: 20px;
+    justify-items: center;
+}

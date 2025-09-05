@@ -1,0 +1,59 @@
+<div class="card">
+    <h2>{{ jsonData?.name }}</h2>
+
+    <section>
+        <h3>Proficiencies options</h3>
+        <h4>{{ jsonData?.proficiency_choices[0].desc}}</h4>
+        <ul>
+            @for (option of jsonData?.proficiency_choices[0].from.options; track $index) {
+            <li>
+                {{ option.item.name }}
+            </li>
+            }
+        </ul>
+    </section>
+
+    <section>
+        <h3>Proficiencies</h3>
+        <div>
+            <ul>
+                @for (option of jsonData?.proficiencies; track $index) {
+                <li>
+                    {{option.name}}
+                </li>
+                }
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h3>Saving Throws</h3>
+        <ul>
+            @for (option of jsonData?.saving_throws; track $index) {
+            <li>
+                {{option.name}}
+            </li>
+            }
+        </ul>
+    </section>
+
+    <section>
+        <h3>Subclasses</h3>
+        <ul>
+            <li>
+                subclass.name
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>Spellcasting (Level <!-- bardClass.spellcasting.level  -->)</h3>
+        <p><strong>Spellcasting Ability:</strong> <!-- bardClass.spellcasting.spellcasting_ability.name  --></p>
+        <div>
+            <h4> info.name </h4>
+            <ul>
+                <li> desc </li>
+            </ul>
+        </div>
+    </section>
+</div>

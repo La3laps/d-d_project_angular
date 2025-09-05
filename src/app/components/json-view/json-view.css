@@ -1,0 +1,7 @@
+.json-view-container {
+    display: flex;
+    gap: 10svh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
