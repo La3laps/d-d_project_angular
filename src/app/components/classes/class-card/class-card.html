@@ -1,9 +1,9 @@
 <div class="card">
-    <h2>{{ jsonData?.name }}</h2>
+    <h2>{{ jsonData?.name }} - HP : {{ jsonData?.hit_die}}</h2>
 
     <section>
         <h3>Proficiencies options</h3>
-        <h4>{{ jsonData?.proficiency_choices[0].desc}}</h4>
+        <p>*{{ jsonData?.proficiency_choices[0].desc}}</p>
         <ul>
             @for (option of jsonData?.proficiency_choices[0].from.options; track $index) {
             <li>
@@ -40,20 +40,29 @@
     <section>
         <h3>Subclasses</h3>
         <ul>
+            @for (option of jsonData?.subclasses; track $index) {
             <li>
-                subclass.name
+                {{option.name}}
             </li>
+            }
         </ul>
     </section>
 
+    @if (jsonData?.spellcasting?.level !== null) {
     <section>
-        <h3>Spellcasting (Level <!-- bardClass.spellcasting.level  -->)</h3>
-        <p><strong>Spellcasting Ability:</strong> <!-- bardClass.spellcasting.spellcasting_ability.name  --></p>
+        <h3>Spellcasting (Level {{ jsonData?.spellcasting?.level }})</h3>
+        <p><strong>Spellcasting Ability:</strong> {{ jsonData?.spellcasting?.spellcasting_ability?.name }}</p>
+
         <div>
-            <h4> info.name </h4>
+            <h4> Info </h4>
             <ul>
-                <li> desc </li>
+                @for (option of jsonData?.spellcasting?.info; track $index) {
+                <li>
+                    <strong>{{option.name}}</strong>: {{option.desc}}
+                </li>
+                }
             </ul>
         </div>
     </section>
+    }
 </div>

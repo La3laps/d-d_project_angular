@@ -1,6 +1,6 @@
 <p>Chose your class</p>
 <div class="character-class-container">
-    @for (data of jsonData["results"]; track $index) {
+    @for (data of jsonData?.results; track $index) {
     <button [routerLink]="formatPath(data.url)">{{ data.name }}</button>
     }
 </div>

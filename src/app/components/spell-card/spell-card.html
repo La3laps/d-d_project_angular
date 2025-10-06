@@ -1,0 +1,7 @@
+<div class="card">
+    @for (option of jsonData?.results; track $index) {
+        <li>
+            {{ option.name }}
+        </li>
+    }
+</div>
