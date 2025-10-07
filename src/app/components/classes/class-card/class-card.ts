@@ -17,7 +17,7 @@ export class ClassCard {
     this.http.get('https://www.dnd5eapi.co/api/2014/classes/'+ this.currentUrl).subscribe({
       next: data => this.jsonData = data,
       error: err => this.jsonData = { error: 'Failed to load data' }
-    })
+    });
 
   }
 }

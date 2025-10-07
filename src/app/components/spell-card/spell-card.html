@@ -1,7 +1,11 @@
 <div class="card">
     @for (option of jsonData?.results; track $index) {
         <li>
-            {{ option.name }}
+            {{ option.name }} : unlocked at level {{ option.level }}
         </li>
+        <button (click)="getSpellData(option.index)">Description</button>
+        @if (showDescription && spellData?.index === option.index) {
+        <p>{{ spellData?.desc }}</p>
+        }
     }
 </div>
